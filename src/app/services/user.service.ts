@@ -8,7 +8,7 @@ import { AuthService } from './auth.service';
 })
 export class UserService {
   constructor(private _http: HttpClient, private _authS: AuthService) {}
-  userURL = 'cozastore-backend-production.up.railway.app/user';
+  userURL = 'https://cozastore-backend-production.up.railway.app/user';
   getUsers(): Observable<any> {
     const header = new HttpHeaders({
       Authorization: `Bearer ${this._authS.getToken()}`,

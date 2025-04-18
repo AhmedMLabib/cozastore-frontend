@@ -8,7 +8,7 @@ import { AuthService } from './auth.service';
 })
 export class OrdersService {
   constructor(private _http: HttpClient, private _authS: AuthService) {}
-  orderURL = 'cozastore-backend-production.up.railway.app/orders';
+  orderURL = 'https://cozastore-backend-production.up.railway.app/orders';
 
   getOrders(): Observable<any> {
     const header = new HttpHeaders({

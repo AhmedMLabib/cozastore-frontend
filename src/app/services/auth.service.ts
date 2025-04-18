@@ -16,7 +16,7 @@ export class AuthService {
   private tokenSubject: BehaviorSubject<string | null> = new BehaviorSubject<
     string | null
   >(null);
-  loginApiURL = 'cozastore-backend-production.up.railway.app/login';
+  loginApiURL = 'https://cozastore-backend-production.up.railway.app/login';
   login(loginData: any): Observable<any> {
     return this._http.post<any>(this.loginApiURL, loginData).pipe(
       tap((res) => {
@@ -50,13 +50,14 @@ export class AuthService {
     return null;
   }
   // register
-  registerApiURL = 'cozastore-backend-production.up.railway.app/register';
+  registerApiURL =
+    'https://cozastore-backend-production.up.railway.app/register';
   register(registerData: any): Observable<any> {
     return this._http.post<any>(this.registerApiURL, registerData);
   }
 
   // send message
-  messageURL = 'cozastore-backend-production.up.railway.app/message';
+  messageURL = 'https://cozastore-backend-production.up.railway.app/message';
   sendMessage(formData: any): Observable<any> {
     return this._http.post<any>(this.messageURL, formData);
   }

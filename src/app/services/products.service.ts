@@ -8,8 +8,8 @@ import { AuthService } from './auth.service';
 })
 export class ProductsService {
   constructor(private _http: HttpClient, private _authS: AuthService) {}
-  productUrl = 'cozastore-backend-production.up.railway.app/products';
-  staticFileUrl = 'cozastore-backend-production.up.railway.app/images/';
+  productUrl = 'https://cozastore-backend-production.up.railway.app/products';
+  staticFileUrl = 'https://cozastore-backend-production.up.railway.app/images/';
   addNewProduct(product: FormData): Observable<any> {
     const header = new HttpHeaders({
       Authorization: `Bearer ${this._authS.getToken()}`,

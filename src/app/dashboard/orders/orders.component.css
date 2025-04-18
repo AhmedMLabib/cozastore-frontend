@@ -1,0 +1,68 @@
+.content {
+  padding: 20px;
+  width: 100%;
+  margin-left: 15px;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+  font-size: 25px;
+  padding: 0px 15px;
+}
+.btn-status {
+  font-size: 0.9rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+}
+
+select {
+  margin: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+select:focus {
+  outline: none;
+}
+
+.btn-completed {
+  background-color: #d4edda;
+  color: #155724;
+}
+.btn-pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+.btn-shipped {
+  background-color: #c6cdfa;
+  color: #717fe0;
+}
+tr {
+  position: relative;
+}
+.products {
+  position: absolute;
+  top: 120%;
+  right: 0%;
+  z-index: 100;
+  background-color: rgba(255, 255, 255);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+}
+.products .product {
+  border-bottom: 1px solid #aaa;
+}
+.viw-prod {
+  background-color: #1c7831;
+  color: white;
+  padding: 3px 6px;
+}
+.apply {
+  background-color: #717fe0;
+  color: white;
+  padding: 3px 5px;
+  margin-left: 10px;
+}

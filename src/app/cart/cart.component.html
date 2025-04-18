@@ -1,0 +1,49 @@
+<div class="container row m-auto justify-content-between flex-wrap">
+  <table class="col-7 cart my-5">
+    <thead>
+      <td></td>
+      <td>PRODUCT</td>
+      <td>PRICE</td>
+      <td>QUANTITY</td>
+      <td>TOTAL</td>
+    </thead>
+    <tbody>
+      @for(order of myOrders ; track $index){
+      <tr>
+        <td><img [src]="staticFileUrl + order.imageURL" alt="" /></td>
+        <td>{{ order.name }}</td>
+        <td>$ {{ order.price }}</td>
+        <td>{{ order.count }}</td>
+        <td>$ {{ order.count * order.price }}</td>
+        <td><button (click)="remove(order)">Remove</button></td>
+      </tr>
+      }
+    </tbody>
+  </table>
+
+  <div class="info col-4 my-5 p-3">
+    @for(order of customerOrders ; track $index ; let i = $index){
+    <div class="order">
+      Order:<span>{{ i + 1 }}</span> Status:
+      <span>{{ order.status }}</span>
+      <span class="viw-prod" (click)="toggle(myProducts)">Show Products</span>
+      <div class="products d-none" #myProducts>
+        @for (prod of order.products; track $index) {
+        <div class="product">
+          <span>{{ prod.name }} </span>
+          <span>price: {{ prod.price }} </span>
+          <span>Count: {{ prod.count }} </span>
+        </div>
+        } Total Price:
+        <span>{{ order.totalPrice }}</span>
+      </div>
+    </div>
+    }
+  </div>
+</div>
+
+<div class="container text-center">
+  <button class="buy" [disabled]="myOrders.length == 0" (click)="buyNow()">
+    Buy Now
+  </button>
+</div>

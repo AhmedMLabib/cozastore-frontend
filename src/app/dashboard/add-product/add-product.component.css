@@ -1,0 +1,20 @@
+.message {
+  color: red;
+}
+form {
+  border: 1px solid #aaa;
+  box-sizing: border-box;
+}
+form textarea {
+  resize: none;
+  height: 150px;
+}
+form .ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.add-btn {
+  background-color: #717fe0;
+  color: white;
+  padding: 5px 15px;
+}

@@ -1,0 +1,11 @@
+footer {
+  min-height: 400px;
+}
+footer h5 {
+  color: #717fe0;
+  font-weight: bold;
+}
+
+footer a {
+  text-decoration: none;
+}

@@ -1,0 +1,76 @@
+<!-- title -->
+<div class="title">
+  <h2 class="text-white">Contact</h2>
+</div>
+
+<!-- contact form -->
+
+<div class="contact container row m-auto my-5 pt-5">
+  <form
+    class="left col-md-6"
+    #contactForm="ngForm"
+    (ngSubmit)="submitForm(contactForm)"
+  >
+    <h3>Send Us A Message</h3>
+    <div class="email p-2 rounded-3 mt-5 m-auto">
+      <i class="fa-regular fa-envelope"></i>
+      <input
+        class="rounded-3 w-100 ps-5"
+        type="email"
+        placeholder="Your Email Address"
+        required
+        pattern="[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}"
+        name="email"
+        ngModel
+        #email="ngModel"
+      />
+    </div>
+    @if(email.invalid && email.touched){ @if(email.errors?.["required"]){
+    <p class="message">email is required</p>
+    }@if(email.errors?.["pattern"]){
+    <p class="message mb-5">email must be in valid form</p>
+    } }
+    <textarea
+      class="w-100 rounded-3 p-2 mt-5"
+      name="message"
+      placeholder="How Can We Help"
+      ngModel
+      #message="ngModel"
+      required
+    ></textarea>
+    @if(message.invalid && message.touched){
+    <p class="message">Please Enter Your Message</p>
+    }
+    <button
+      type="submit"
+      class="btn text-uppercase mt-5 bg-dark text-light w-100"
+      [disabled]="contactForm.invalid"
+    >
+      Submit
+    </button>
+  </form>
+
+  <div class="right col-md-6">
+    <div class="address row m-auto">
+      <i class="fa-solid fa-location-dot col-1"></i>
+      <div class="txt col-10">
+        <h4>Address</h4>
+        <p>Coza Store Center 8th floor, 379 Hudson St, New York, NY 10018 US</p>
+      </div>
+    </div>
+    <div class="phone row m-auto">
+      <i class="fa-solid fa-phone col-1"></i>
+      <div class="txt col-10">
+        <h4>Lets Talk</h4>
+        <p>+20101010121</p>
+      </div>
+    </div>
+    <div class="support row m-auto">
+      <i class="fa-regular fa-envelope col-1"></i>
+      <div class="txt col-10">
+        <h4>Sale Support</h4>
+        <p>contactexample.com</p>
+      </div>
+    </div>
+  </div>
+</div>

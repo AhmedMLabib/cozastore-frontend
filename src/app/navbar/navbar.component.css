@@ -1,0 +1,80 @@
+nav {
+  height: 100px;
+  border-bottom: 1px solid #ccc;
+  z-index: 100;
+  position: sticky;
+  top: 0;
+}
+
+nav h1 {
+  font-weight: bold;
+  font-size: 30px !important;
+}
+nav h1 span {
+  color: #717fe0;
+  font-size: 40px;
+}
+nav .links {
+  margin-left: 100px;
+  float: left;
+}
+
+nav .links li {
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+nav .links li:hover > a {
+  color: #717fe0;
+}
+nav i {
+  color: black;
+  cursor: pointer;
+  font-size: 20px;
+  cursor: pointer;
+}
+nav i.active {
+  color: #717fe0;
+}
+nav i:hover {
+  color: #717fe0;
+}
+nav .links li > a {
+  transition: 0.3s;
+}
+nav .links li > a.active {
+  color: #717fe0 !important;
+  font-weight: bold;
+}
+
+nav .links .login > a {
+  background-color: white;
+  text-decoration: none;
+  color: #717fe0;
+  border: 1px solid #717fe0;
+}
+
+nav .links .register > a {
+  background-color: white;
+  color: #ab1515;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid #ab1515;
+}
+
+nav .links .login:hover > a {
+  background-color: #717fe0;
+  color: white;
+}
+nav .links .login > a.login-active {
+  background-color: #717fe0;
+  color: white;
+}
+nav .links .register:hover > a {
+  background-color: #ab1515;
+  color: white;
+}
+nav .links .register a.register-active {
+  background-color: #ab1515;
+  color: white;
+}

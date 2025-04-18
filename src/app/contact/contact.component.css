@@ -1,0 +1,68 @@
+/* title */
+
+.title {
+  height: 200px;
+  background-image: url("/img/bg-01.jpg");
+  background-position: center;
+  position: relative;
+}
+.title h2 {
+  font-weight: bold;
+  font-size: 50px;
+  position: absolute;
+  top: 40%;
+  left: 45%;
+}
+
+.contact > form {
+  border: 1px solid #aaa;
+  padding: 50px;
+}
+.contact .left input,
+.contact .left textarea {
+  border: 1px solid #aaa;
+  resize: none;
+  outline: none;
+  display: block;
+}
+.contact .left input {
+  height: 35px;
+}
+.contact .left .email {
+  position: relative;
+}
+.contact .left i {
+  position: absolute;
+  top: 17px;
+  left: 25px;
+}
+.contact .left button:hover {
+  background-color: #717fe0 !important;
+}
+.contact .right > div:not(:last-child) {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 30px !important;
+}
+.contact .right i {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.contact .right h4 {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.contact .right p {
+  color: #aaa;
+}
+
+.message {
+  color: #ab1515;
+}
+
+textarea.ng-invalid.ng-touched,
+input.ng-invalid.ng-touched {
+  border: 1px solid #ab1515 !important;
+}

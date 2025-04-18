@@ -1,0 +1,21 @@
+<div class="content">
+  <div class="mb-4">
+    <h2>Messages List</h2>
+  </div>
+  <table class="table table-bordered">
+    <thead class="table-light">
+      <tr>
+        <th>Email</th>
+        <th>message</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(element of elements ; track $index){
+      <tr>
+        <td>{{ element.email }}</td>
+        <td class="message">{{ element.message }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

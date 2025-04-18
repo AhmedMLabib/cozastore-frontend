@@ -1,0 +1,23 @@
+.register-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+.btn-custom {
+  background-color: #717fe0;
+  color: #fff;
+}
+.btn-custom:hover {
+  background-color: #303e98;
+}
+
+.message {
+  color: #ab1515;
+}
+
+input.ng-touched.ng-invalid {
+  border: 1px solid #ab1515;
+}

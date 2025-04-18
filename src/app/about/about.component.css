@@ -1,0 +1,49 @@
+/* title */
+
+.title {
+  height: 200px;
+  background-image: url("/img/bg-01.jpg");
+  background-position: center;
+  position: relative;
+}
+.title h2 {
+  font-weight: bold;
+  font-size: 50px;
+  position: absolute;
+  top: 40%;
+  left: 45%;
+}
+
+/* story */
+
+.story .txt h3,
+.mission .txt h3 {
+  font-weight: bold;
+}
+.story .txt p,
+.mission .txt p {
+  color: #aaa;
+}
+
+.story .img,
+.mission .img {
+  border: 5px solid #aaa;
+  border-radius: 10px;
+}
+
+.story .img img {
+  transform: translate(40px, -30px);
+  border-radius: 10px;
+}
+
+.mission .img img {
+  transform: translate(-40px, -30px);
+  border-radius: 10px;
+}
+
+@media (max-width: 676px) {
+  .story .img img,
+  .mission .img img {
+    transform: translate(0, 0);
+  }
+}

@@ -1,0 +1,63 @@
+.ftco-no-pt {
+  padding-top: 0 !important;
+}
+.ftco-section {
+  padding: 8em 0;
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: calc(var(--bs-gutter-y) * -1);
+  margin-right: calc(var(--bs-gutter-x) / -2);
+  margin-left: calc(var(--bs-gutter-x) / -2);
+}
+
+.FAQs {
+  transform: translateY(100px);
+  transition: 1s;
+}
+.go-up {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+
+.heading-section .subheading {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 5px;
+  color: #717fe0;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.heading-section h2,
+.heading-section .h2 {
+  font-size: 46px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.accordion .accordion-button:not(.collapsed) {
+  background: #717fe0;
+  color: #111111;
+}
+
+.accordion-item:first-of-type .accordion-button {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+.accordion .accordion-button {
+  background: #fff;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.question-button:hover {
+  color: #717fe0;
+}

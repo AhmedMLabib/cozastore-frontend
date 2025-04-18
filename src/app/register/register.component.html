@@ -1,0 +1,123 @@
+<div class="register-container container my-5">
+  <h2 class="text-center mb-4">Register</h2>
+  <form #registerForm="ngForm" (ngSubmit)="submitRegister(registerForm)">
+    <div class="mb-3">
+      <label for="name" class="form-label">Full Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="Enter your full name"
+        ngModel
+        name="name"
+        #name="ngModel"
+        required
+      />
+      @if(name.invalid && name.touched){
+      <p class="message">name is required</p>
+      }
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="Enter your email"
+        name="email"
+        ngModel
+        #email="ngModel"
+        pattern="[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}"
+        required
+      />
+      @if(email.invalid && email.touched){ @if(email.errors?.["required"]){
+      <p class="message">email is required</p>
+      }@if(email.errors?.["pattern"]){
+      <p class="message">email must be in right form</p>
+      } }
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone</label>
+      <input
+        type="tel"
+        class="form-control"
+        id="phone"
+        placeholder="Enter your phone number"
+        name="phone"
+        ngModel
+        #phone="ngModel"
+        pattern="\d{11}"
+        required
+      />
+      @if(phone.invalid && phone.touched){ @if(phone.errors?.["required"]){
+      <p class="message">phone number in required</p>
+      }@if(phone.errors?.["pattern"]){
+      <p class="message">phone number must br 11 digits</p>
+      } }
+    </div>
+    <div class="mb-3">
+      <label for="address" class="form-label">Address</label>
+      <input
+        type="text"
+        class="form-control"
+        id="address"
+        placeholder="Enter your address"
+        name="address"
+        ngModel
+        #address="ngModel"
+        required
+      />
+      @if(address.invalid && email.touched){
+      <p class="message">address is required</p>
+      }
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        placeholder="Enter your password"
+        name="password"
+        ngModel
+        #password="ngModel"
+        minlength="8"
+        required
+      />
+      @if(password.invalid && password.touched){
+      @if(password.errors?.["required"]){
+
+      <p class="message">password is required</p>
+      }@if(password.errors?.["minlength"]){
+      <p class="message">password must be at lest 8 character</p>
+      } }
+    </div>
+    <div class="mb-3">
+      <label for="re-password" class="form-label">Retype Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="re-password"
+        placeholder="Enter your password"
+        name="rePassword"
+        ngModel
+        #rePassword="ngModel"
+        [pattern]="password.value"
+        required
+      />
+      @if(rePassword.invalid && rePassword.touched){
+      <p class="message">your password must match the password</p>
+      }
+    </div>
+    <button
+      type="submit"
+      class="btn btn-custom w-100"
+      [disabled]="registerForm.invalid"
+    >
+      Register
+    </button>
+  </form>
+  @if(isExist){
+    <p class="message">User Already Exist</p>
+  }
+</div>

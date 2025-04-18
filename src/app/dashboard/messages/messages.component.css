@@ -1,0 +1,22 @@
+.content {
+  padding: 20px;
+  margin-left: 15px;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+  table-layout: fixed;
+}
+.table th,
+.table td {
+  vertical-align: middle;
+  font-size: 25px;
+  padding: 0px 15px;
+  width: fit-content;
+  word-wrap: break-word;
+}
+
+.message {
+  width: 50%;
+}

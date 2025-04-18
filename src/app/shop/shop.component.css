@@ -1,0 +1,176 @@
+/* categories */
+.categories > ul {
+  list-style: none;
+}
+.categories > ul li {
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .categories > ul li {
+    margin-right: 10px !important;
+  }
+}
+.categories > ul li.active {
+  font-weight: bold;
+}
+.categories > ul li.active,
+.categories > ul li:hover {
+  color: #717fe0;
+  border-bottom: 1px solid #717fe0;
+}
+
+.categories .search input {
+  height: 30px;
+  border: 1px solid #aaa;
+  outline: none;
+}
+
+.categories .search input:focus {
+  border-color: #717fe0;
+}
+
+.categories .search button {
+  height: 30px;
+}
+.categories .search button:hover {
+  background-color: #717fe0 !important;
+}
+
+/* cards */
+
+.card {
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+.card .img {
+  position: relative;
+  overflow: hidden;
+}
+.card .view-btn {
+  position: absolute;
+  bottom: -50%;
+  left: 30%;
+  background-color: #717fe0;
+  color: white;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+
+.card:hover .view-btn {
+  bottom: 10%;
+}
+.card .img {
+  height: 200px;
+}
+.card img {
+  transition: 0.5s;
+}
+.card:hover img {
+  transform: scale(1.1);
+}
+
+.card .card-body {
+  overflow: hidden;
+  z-index: 10;
+  background-color: white;
+}
+
+.cards .desc {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 6, 41, 0.6);
+
+  z-index: 2000;
+}
+
+body.no-scroll {
+  overflow: hidden !important;
+}
+
+.cards .desc .img {
+  width: 50%;
+  height: 400px;
+  border-radius: 15px 15px 0 0;
+  position: relative;
+  background-color: white;
+}
+.cards .desc .img img {
+  border-radius: 15px 15px 0 0;
+  height: 100%;
+}
+.cards .desc .img .close {
+  background-color: #ab1515;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 5px 10px;
+  position: absolute;
+  top: -20px;
+  right: -40px;
+  cursor: pointer;
+}
+
+.cards .desc .txt {
+  background-color: white;
+  width: 50%;
+  border-radius: 0 0 15px 15px;
+}
+.cards .desc .txt h3 {
+  font-weight: bold;
+}
+.cards .desc .txt p {
+  color: #aaa;
+  text-align: left;
+}
+.cards .desc .txt input {
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 3px 7px;
+  width: 100px;
+}
+.cards .desc .txt button {
+  background-color: #717fe0;
+  color: white;
+  border-radius: 15px;
+}
+.cards .desc .txt input:focus {
+  outline: none;
+}
+
+.buttons button {
+  background-color: white;
+  color: #717fe0;
+  border: 1px solid #717fe0;
+  border-radius: 50%;
+}
+.buttons .page.active {
+  color: white;
+  background-color: #717fe0;
+  font-weight: bold;
+}
+.buttons .next,
+.buttons .prev {
+  background-color: #717fe0;
+  color: white;
+  border: none;
+}
+.buttons .next:disabled,
+.buttons .prev:disabled {
+  background-color: #aaa;
+}
+@media (max-width: 767px) {
+  .cards .card {
+    width: 90%;
+  }
+}
+@media (min-width: 767px) {
+  .cards .card {
+    width: calc(90% / 2);
+  }
+}
+@media (min-width: 991px) {
+  .cards .card {
+    width: calc(90% / 3);
+  }
+}

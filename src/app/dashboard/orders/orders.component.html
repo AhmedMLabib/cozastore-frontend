@@ -1,0 +1,46 @@
+<!-- Content -->
+<div class="content">
+  <h2>Orders</h2>
+
+  <table class="table table-bordered">
+    <thead class="table-light">
+      <tr>
+        <th>Customer Name</th>
+        <th>Total</th>
+        <th>Status</th>
+        <th>Products</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(order of allOrders ; track $index){
+      <tr>
+        <td>{{ order.costumerName }}</td>
+        <td>${{ order.totalPrice }}</td>
+        <td>
+          <select [(ngModel)]="order.status">
+            <option ngValue="pending" class="btn-pending">Pending</option>
+            <option ngValue="shipped" class="btn-shipped">Shipped</option>
+            <option ngValue="completed" class="btn-completed">Completed</option>
+          </select>
+          <button class="btn apply" (click)="changeStatus(order)">Apply</button>
+        </td>
+        <td>
+          <button class="btn viw-prod" (click)="toggle(myProducts)">
+            View Products
+          </button>
+        </td>
+        <div class="products d-none" #myProducts>
+          <h2>Order Products</h2>
+          @for(product of order.products ;track $index){
+          <div class="product mb-2 pb-2">
+            <span class="me-5">Name: {{ product.name }}</span>
+            <span>Price: ${{ product.price }}</span>
+          </div>
+          }
+        </div>
+      </tr>
+
+      }
+    </tbody>
+  </table>
+</div>

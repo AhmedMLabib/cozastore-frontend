@@ -1,0 +1,144 @@
+<!-- Slider -->
+
+<div
+  id="carouselExampleControls"
+  class="carousel slide w-100"
+  data-bs-ride="carousel"
+  data-bs-interval="3000"
+>
+  <div class="carousel-inner h-100">
+    <div class="carousel-item active">
+      <img
+        class="d-block w-100 h-100"
+        src="img/slide-02.jpg"
+        alt="First slide"
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <p>Mean New-Season</p>
+        <h1>Jackets And Coats</h1>
+        <button routerLink="/shop">Shop Now</button>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img
+        class="d-block w-100 h-100"
+        src="img/slide-03.jpg"
+        alt="Second slide"
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <p>Mean New-Season</p>
+        <h1>Jackets And Coats</h1>
+        <button routerLink="/shop">Shop Now</button>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img
+        class="d-block w-100 h-100"
+        src="img/slide-04.jpg.webp"
+        alt="Third slide"
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <p>Mean New-Season</p>
+        <h1>Jackets And Coats</h1>
+        <button routerLink="/shop">Shop Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Store Overview -->
+
+<div id="productCarousel" class="carousel slide store">
+  <h2 class="text-center my-5">Store Overview</h2>
+  <div class="carousel-inner container">
+    <div class="carousel-item active">
+      <div class="row text-center">
+        @for(product of inHome1 ; let i=$index ; track $index) {
+        <div class="col-md-3">
+          <div class="card">
+            <div class="img">
+              <img
+                [src]="staticUrl + product.imageURL"
+                class="card-img-top"
+                alt="Product 1"
+              />
+              <button class="btn view-btn" routerLink="/shop">View Now</button>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="row text-center">
+        @for(product of inHome2 ; let i=$index ; track $index) {
+        <div class="col-md-3">
+          <div class="card">
+            <img
+              [src]="staticUrl + product.imageURL"
+              class="card-img-top w-100"
+              alt="Product 1"
+            />
+            <button class="btn view-btn" routerLink="/shop">View Now</button>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev store-prev"
+    type="button"
+    data-bs-target="#productCarousel"
+    data-bs-slide="prev"
+  >
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+  <button
+    class="carousel-control-next store-next"
+    type="button"
+    data-bs-target="#productCarousel"
+    data-bs-slide="next"
+  >
+    <i class="fa-solid fa-chevron-right"></i>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- our story -->
+
+<div class="story container m-auto row">
+  <div class="txt col-md-7">
+    <h3>Our Story</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat
+      consequat enim, non auctor massa ultrices non. Morbi sed odio massa.
+      Quisque at vehicula tellus, sed tincidunt augue. Orci varius natoque
+      penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      Maecenas varius egestas diam, eu sodales metus scelerisque congue.
+      Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+      ac turpis egestas. Maecenas gravida justo eu arcu egestas convallis.
+      Nullam eu erat bibendum, tempus ipsum eget, dictum enim. Donec non neque
+      ut enim dapibus tincidunt vitae nec augue. Suspendisse potenti. Proin ut
+      est diam. Donec condimentum euismod tortor, eget facilisis diam faucibus
+      et. Morbi a tempor elit.
+      <br />
+      <br />
+      Donec gravida lorem elit, quis condimentum ex semper sit amet. Fusce eget
+      ligula magna. Aliquam aliquam imperdiet sodales. Ut fringilla turpis in
+      vehicula vehicula. Pellentesque congue ac orci ut gravida. Aliquam erat
+      volutpat. Donec iaculis lectus a arcu facilisis, eu sodales lectus
+      sagittis. Etiam pellentesque, magna vel dictum rutrum, neque justo
+      eleifend elit, vel tincidunt erat arcu ut sem. Sed rutrum, turpis ut
+      commodo efficitur, quam velit convallis ipsum, et maximus enim ligula ac
+      ligula.
+      <br />
+      <br />
+      Any questions? Let us know in store at 8th floor, 379 Hudson St, New York,
+      NY 10018 or call us on (+1) 96 716 6879
+    </p>
+  </div>
+  <div class="img col-md-5 mt-5">
+    <img class="w-100 h-100" src="img/about-01.jpg" alt="" />
+  </div>
+</div>

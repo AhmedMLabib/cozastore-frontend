@@ -1,0 +1,59 @@
+<div class="login-container container my-5">
+  <h2 class="text-center mb-4">Login</h2>
+  <form #loginForm="ngForm" (ngSubmit)="submitLogin(loginForm)">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="Enter your email"
+        name="email"
+        ngModel
+        #email="ngModel"
+        required
+        pattern="[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}"
+      />
+      @if(email.invalid && email.touched){ @if(email.errors?.["required"]){
+      <p class="message">email is required</p>
+      }@if(email.errors?.["pattern"]){
+      <p class="message">email must be in valid form</p>
+      } }
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        placeholder="Enter your password"
+        name="password"
+        ngModel
+        #password="ngModel"
+        required
+        minlength="8"
+      />
+      @if(password.invalid && password.touched){
+      @if(password.errors?.["required"]){
+      <p class="message">email is required</p>
+
+      }@if(password.errors?.["minlength"]){
+      <p class="message">password must be at least 8 characters</p>
+
+      } }
+    </div>
+    <button
+      type="submit"
+      class="btn btn-custom w-100"
+      [disabled]="loginForm.invalid"
+    >
+      Login
+    </button>
+  </form>
+  @if(error){
+  <p class="message">email or password is wrong</p>
+  }
+  <p class="go-signup text-center pt-2 mt-3">
+    or <span routerLink="/register">signup</span>
+  </p>
+</div>

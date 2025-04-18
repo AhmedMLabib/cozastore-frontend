@@ -1,0 +1,89 @@
+<!-- categories -->
+<div
+  class="categories container d-flex justify-content-between flex-wrap m-auto mt-5"
+>
+  <ul class="d-flex">
+    <li #liCat class="cat me-4 active" (click)="sortByCat('', liCat)">All</li>
+    @for(category of categories ; track $index){
+    <li #liCat class="cat me-4" (click)="sortByCat(category, liCat)">
+      {{ category }}
+    </li>
+    }
+  </ul>
+  <div class="search">
+    <input #sInput class="rounded-3" type="text" placeholder="Search" />
+    <button
+      class="btn rounded-3 bg-dark text-white ms-3 p-0 px-1"
+      (click)="search(sInput)"
+    >
+      Search
+    </button>
+  </div>
+</div>
+<!-- cards -->
+
+<div
+  class="cards container d-flex justify-content-around flex-wrap m-auto mt-5"
+>
+  @for(product of products ; track $index){
+  <div class="card text-center">
+    <div class="img">
+      <img
+        [src]="staticUrl + product.imageURL"
+        class="card-img-top w-100 h-100"
+        alt="Product 1"
+      />
+      <button class="btn view-btn" (click)="open(descDiv)">View Now</button>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title" style="font-weight: bold">{{ product.name }}</h5>
+      <p style="color: #aaa">({{ product.category }})</p>
+      <p style="color: #717fe0; font-weight: bold">${{ product.price }}</p>
+    </div>
+  </div>
+  <div #descDiv class="desc d-none text-center pt-4 pb-1 w-100 h-100">
+    <div class="img m-auto">
+      <span class="close" (click)="close(descDiv)">X</span>
+      <img class="w-100" [src]="staticUrl + product.imageURL" alt="" />
+    </div>
+    <div class="txt m-auto p-2">
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <div class="buttons">
+        <input #qInput type="number" min="1" value="1" />
+        <button class="btn py-1 ms-5" (click)="addToCart(product, qInput)">
+          Add To Cart
+        </button>
+      </div>
+    </div>
+  </div>
+  }
+</div>
+<div class="buttons text-center">
+  <button
+    (click)="onPageChange(currentPage - 1)"
+    [disabled]="currentPage === 1"
+    class="prev"
+  >
+    <
+  </button>
+
+  @for(page of [].constructor(totalPages) ; track $index ;let i =$index){
+  <button
+    [class.active]="currentPage === i + 1"
+    (click)="goToPage(i + 1)"
+    class="page ms-1"
+  >
+    {{ i + 1 }}
+  </button>
+
+  }
+
+  <button
+    (click)="onPageChange(currentPage + 1)"
+    [disabled]="currentPage === totalPages"
+    class="next ms-1"
+  >
+    >
+  </button>
+</div>

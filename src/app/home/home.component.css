@@ -1,0 +1,110 @@
+/* slider */
+
+.carousel-caption {
+  left: -30%;
+  top: 40%;
+  color: #000;
+}
+
+.carousel-caption p {
+  font-size: 25px;
+}
+
+.carousel-caption h1 {
+  font-size: 50px;
+  font-weight: bold;
+}
+.carousel-caption button {
+  background-color: #717fe0;
+  color: white;
+  border: none;
+  font-size: 20px;
+  margin-top: 10px;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+/* store overflow */
+
+.card {
+  overflow: hidden;
+  height: 200px;
+}
+.card .img {
+  position: relative;
+  overflow: hidden;
+}
+
+.card .view-btn {
+  position: absolute;
+  bottom: -50%;
+  left: 30%;
+  background-color: #717fe0;
+  color: white;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+
+.card:hover .view-btn {
+  bottom: 10%;
+}
+.card img {
+  transition: 0.5s;
+}
+.card:hover img {
+  transform: scale(1.1);
+}
+
+.card .card-body {
+  overflow: hidden;
+  z-index: 10;
+  background-color: white;
+}
+
+.store-prev,
+.store-next {
+  width: 10%;
+  font-size: 50px;
+  top: 120%;
+}
+@media (max-width: 767px) {
+  .store-prev,
+  .store-next {
+    top: 105%;
+  }
+}
+.store-prev {
+  left: 15%;
+}
+.store-next {
+  right: 15%;
+}
+.store-prev > i,
+.store-next > i {
+  color: #717fe0;
+}
+
+/* story */
+.story {
+  margin-top: 100px !important;
+}
+
+.story .txt p {
+  color: #aaa;
+}
+
+.story .img {
+  border: 5px solid #aaa;
+  border-radius: 10px;
+}
+
+.story .img img {
+  transform: translate(40px, -30px);
+  border-radius: 10px;
+}
+
+@media (max-width: 767px) {
+  .story .img img {
+    transform: translate(0, 0);
+  }
+}

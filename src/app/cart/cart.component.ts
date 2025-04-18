@@ -19,7 +19,7 @@ export class CartComponent implements OnInit {
     this.showDetails(this.authS.decodeAccessToken().id);
   }
   myOrders = JSON.parse(localStorage.getItem('cart') || '[]');
-  staticFileUrl = 'http://localhost:3000/images/';
+  staticFileUrl = 'https://cozastore-backend-production.up.railway.app/images/';
   remove(order: any) {
     if (confirm('Are You Sure To Remove This Product ?')) {
       this.myOrders = this.myOrders.filter((o: any) => o !== order);
